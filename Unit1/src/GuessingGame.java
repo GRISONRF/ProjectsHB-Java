@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class GuessingGame {
     /*
 greet player
@@ -13,6 +15,10 @@ repeat forever:
     public static void main(String[] args) {
 
         System.out.println("Hello player!");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What is the player's name? ");
+        String player = scan.nextLine();
+        System.out.println(player);
     }
 
 }
