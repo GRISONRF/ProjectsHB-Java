@@ -27,6 +27,7 @@ public class Mars {
         //Call a function called LandingCheck() that has a parameter of 100, returns boolean, and set it equal to Landing
         Landing = LandingCheck(100);
         new GuessingGame();
+        new MarsExpedition();
     }
     //Create a public static void function called LandingCheck with an int parameter called Loops
     public static boolean LandingCheck(int Loops) throws InterruptedException {
