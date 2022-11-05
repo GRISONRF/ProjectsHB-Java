@@ -54,9 +54,5 @@ public class MarsExpedition {
                 "\n3...." +
                 "\n2...." +
                 "\n1....");
-
-
-
-
     }
 }
