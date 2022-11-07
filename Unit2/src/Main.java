@@ -12,6 +12,7 @@ public class Main {
 
         System.out.println("We are in the middle of creating the cupcake menu. We currently have three cupcakes on the menu but we need to decide on pricing.");
 
+        //cupcake
         Scanner input = new Scanner(System.in);
         System.out.println("We are deciding on the price for our standard cupcake. Here is the description:");
         cupcake.type();
@@ -39,6 +40,38 @@ public class Main {
         cupcakeMenu.add(cupcake);
         cupcakeMenu.add(redVelvet);
         cupcakeMenu.add(chocolate);
+
+        ArrayList<Drink> drinkMenu = new ArrayList<Drink>();
+
+        Drink water = new Drink();
+        Soda soda = new Soda();
+        Milk milk = new Milk();
+
+        //water
+        System.out.println("We are deciding on the price for our drinks. Here is the description:");
+        water.type();
+        System.out.println("How much would you like to charge for the water? (Input a numerical number taken to 2 decimal places)");
+        String wPriceText = input.nextLine();
+        double wPrice = Double.parseDouble(wPriceText);
+        water.setPrice(wPrice);
+
+        //soda
+        System.out.println("We are deciding on the price for our drinks. Here is the description:");
+        water.type();
+        System.out.println("How much would you like to charge for the soda? (Input a numerical number taken to 2 decimal places)");
+        String sPriceText = input.nextLine();
+        double sPrice = Double.parseDouble(sPriceText);
+        water.setPrice(sPrice);
+
+        //milk
+        System.out.println("We are deciding on the price for our drinks. Here is the description:");
+        water.type();
+        System.out.println("How much would you like to charge for the milk? (Input a numerical number taken to 2 decimal places)");
+        String mPriceText = input.nextLine();
+        double mPrice = Double.parseDouble(mPriceText);
+        water.setPrice(mPrice);
+
+
     }
 
     class Cupcake {
@@ -71,6 +104,37 @@ public class Main {
         public void type() {
             super.type();
             System.out.println("A chocolate based cupcake, with chocolate frosting.");
+        }
+    }
+
+    class Drink{
+
+        public double price;
+
+        public double getPrice() {
+            return price;
+        }
+
+        public void setPrice(double price){
+            this.price = price;
+        }
+
+        public void type(){
+            System.out.println("A bottle of water.");;
+        }
+    }
+
+    class Soda extends Drink{
+
+        public void type(){
+            System.out.println("A bottle of soda.");
+        }
+    }
+
+    class Milk extends Drink{
+
+        public void type(){
+            System.out.println("A bottle of  milk.");
         }
     }
 
