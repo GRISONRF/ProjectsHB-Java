@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.file.LinkPermission;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -73,6 +77,67 @@ public class Order {
             }
         }
 
+
+        System.out.println(order.get(0));
+        System.out.println(order.get(1));
+        double subtotal = 0.0;
+        for (int i = 2; i < order.size(); i++) {
+            if (order.get(i).equals(cupcakeMenu.get(0))) {
+                cupcakeMenu.get(0).type();
+                System.out.println(cupcakeMenu.get(0).getPrice());
+                subtotal += cupcakeMenu.get(0).getPrice();
+            } else if (order.get(i).equals(cupcakeMenu.get(1))) {
+                cupcakeMenu.get(1).type();
+                System.out.println(cupcakeMenu.get(1).getPrice());
+                subtotal += cupcakeMenu.get(1).getPrice();
+            } else if (order.get(i).equals(cupcakeMenu.get(2))) {
+                cupcakeMenu.get(2).type();
+                System.out.println(cupcakeMenu.get(2).getPrice());
+                subtotal += cupcakeMenu.get(2).getPrice();
+            }
+        }
+        System.out.println(subtotal);
+        new CreateFile();
+        new WriteToFile(order);
     }
 
+
+
+
+}
+class CreateFile {
+
+    public CreateFile(){
+
+        try {
+            File salesData = new File("salesData.txt");
+            if (salesData.createNewFile()){
+                System.out.println("File created: " + salesData.getName());;
+            } else{
+                System.out.println("File already exists");
+            }
+
+        } catch (IOException e) {
+            System.out.println("An error occurred");
+        }
+    }
+}
+
+class WriteToFile {
+
+    public WriteToFile(ArrayList<Object> order){
+
+        try {
+            FileWriter fw = new FileWriter("SalesData.txt", true);
+            PrintWriter salesWriter = new PrintWriter(fw);
+            for (int i = 0; i < order.size(); i++){
+                salesWriter.println(order.get(i));
+            }
+            salesWriter.close();
+            System.out.println("Successfully wrote to the file.");
+
+        } catch(IOException e){
+            System.out.println("An error occurred");
+        }
+    }
 }
