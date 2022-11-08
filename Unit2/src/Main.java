@@ -71,6 +71,8 @@ public class Main {
         double mPrice = Double.parseDouble(mPriceText);
         water.setPrice(mPrice);
 
+        new Order(cupcakeMenu, drinkMenu);
+
 
     }
 
