@@ -32,7 +32,7 @@ public class FindingList {
 
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Which of the fossils would you like to learn more about? (Bird, fish, or tooth");
+        System.out.println("Which of the fossils would you like to learn more about? (Bird, fish, or tooth)");
         String fossilChoice = scan.nextLine();
 
         if (fossilChoice.equalsIgnoreCase("bird")) {

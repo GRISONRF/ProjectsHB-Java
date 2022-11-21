@@ -28,7 +28,9 @@ public class MarsExpedition {
         }
 
         System.out.println("You are allowed to bring one snack with you. What do you want to bring?");
+        input.nextLine();
         String snack = input.nextLine();
+        input.nextLine();
         System.out.println("Nice choice, you will be bringing a " + " with you.");
 
         System.out.println("You have the choice of 3 vehicles" +

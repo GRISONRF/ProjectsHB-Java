@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
 @Component
 public class BestMovieService {
     @Autowired
@@ -22,4 +24,9 @@ public class BestMovieService {
     public BestMovieService(@Qualifier("titanicMovie") Movie movie) {
         this.movie = movie;
     }
+
+    public class MovieEntity {
+    }
 }
+
+
